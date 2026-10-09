@@ -1,0 +1,29 @@
+{
+  "name": "webcam-dust",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A webcam effect for the browser: your body as a figure of flowing gold dust, with the tracking drawn in.",
+  "license": "MIT",
+  "author": "Robin Sadeghpour-Faraj",
+  "homepage": "https://native.express/lab/dust",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinsadeghpour/webcam-dust.git"
+  },
+  "type": "module",
+  "scripts": {
+    "wasm": "node tools/copy-wasm.mjs",
+    "predev": "npm run wasm",
+    "dev": "vite --port 5182 --strictPort",
+    "prebuild": "npm run wasm",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 5182 --strictPort"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

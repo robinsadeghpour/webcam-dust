@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      // Some hosts serve this page at a path with no trailing slash, where
+      // relative URLs would resolve one level too high. Give them a base.
+      (function () {
+        var path = location.pathname;
+        if (path.slice(-1) !== '/' && path.slice(-5) !== '.html') {
+          var base = document.createElement('base');
+          base.href = path + '/';
+          document.head.prepend(base);
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="A webcam effect: your body as a figure of flowing gold dust, with the tracking drawn in." />
+    <title>Dust</title>
+  </head>
+  <body>
+    <main id="stage">
+      <canvas id="view" width="1080" height="1920"></canvas>
+      <aside id="hints" hidden></aside>
+      <p id="notice" role="status"></p>
+      <p id="rec" hidden><i></i><span></span></p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

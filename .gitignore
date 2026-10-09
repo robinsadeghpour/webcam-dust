@@ -1,0 +1,6 @@
+node_modules
+dist
+public/mediapipe
+.DS_Store
+*.log
+tools/out
